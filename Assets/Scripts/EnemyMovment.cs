@@ -6,7 +6,6 @@ public class EnemyMovment : MonoBehaviour
     private Rigidbody body;
     private int moveSpeed = 3;
     private bool flipped = false;
-    //private float rotated = 180;
 
     private void Awake()
     {
