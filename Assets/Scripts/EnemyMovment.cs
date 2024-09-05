@@ -6,6 +6,7 @@ public class EnemyMovment : MonoBehaviour
     private Rigidbody body;
     private int moveSpeed = 3;
     private bool flipped = false;
+    //private float rotated = 180;
 
     private void Awake()
     {
@@ -29,6 +30,14 @@ public class EnemyMovment : MonoBehaviour
         if (collision.gameObject.tag == "Map")
         {
             flipped = !flipped;
+            if (flipped == false)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
+            }
+            else if (flipped == true)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 180f);
+            }
         }
     }
 }
